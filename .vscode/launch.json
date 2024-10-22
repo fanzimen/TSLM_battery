@@ -14,7 +14,7 @@
                 "--task_name",
                 "anomaly_detection_mse",
                 "--is_training",
-                "1",
+                "0",
                 "--root_path",
                 "./dataset/UCR_Anomaly_FullData",
                 "--data_path",

@@ -106,11 +106,11 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
                     outputs = self.model(batch_x, None, None, None)
 
 
-                # loss = criterion(outputs, batch_x)
-                # train_loss.append(loss.item())
+                loss = criterion(outputs, batch_x)
+                train_loss.append(loss.item())
 
 
-                outputs = outputs
+                # outputs = outputs
                 # real, img = torch.chunk(outputs, dim=1, chunks=2)
                 # outputs_freq = torch.complex(real, img)
                 # outputs_temp = torch.fft.irfft(outputs_freq, dim=1)
@@ -122,8 +122,8 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
                 # outputs_temp = outputs_temp_resized
                 # batch_X = batch_x
                 # loss_tmp = ((outputs-batch_x)**2).mean()
-                loss = criterion(outputs_temp, batch_X)
-                train_loss.append(loss.item())
+                # loss = criterion(outputs_temp, batch_X)
+                # train_loss.append(loss.item())
                 
                 if (i + 1) % 100 == 0:
                     print("\titers: {0}, epoch: {1} | loss: {2:.7f}".format(i + 1, epoch + 1, loss.item()))
@@ -217,7 +217,7 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
                     outputs = self.model(batch_x[:, :-self.args.patch_len, :], None, None, None) #[1, 672, 1] -> [1, 672, 1]
                     batch_x = batch_x[:, self.args.patch_len:-self.args.patch_len, :] #[1, 576, 1]
                     outputs = outputs[:, :-self.args.patch_len, :] #[1, 576, 1]
-                else:
+                else: 
                     outputs = self.model(batch_x, None, None, None)
 
 
@@ -234,9 +234,9 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
 
                 input_list.append(batch_x[0, -self.args.patch_len:, -1].detach().cpu().numpy())
                 output_list.append(outputs[0, -self.args.patch_len:, -1].detach().cpu().numpy())
-                test_labels.append(batch_y.reshape(-1).detach().cpu().numpy())
-                score = torch.mean(self.anomaly_criterion(batch_x, outputs), dim=-1).reshape(-1)
-                score_list.append(score.detach().cpu().numpy()) #(1, 96)
+                test_labels.append(batch_y[0,-self.args.patch_len:].reshape(-1).detach().cpu().numpy())
+                score = self.anomaly_criterion(batch_x, outputs).reshape(-1) 
+                score_list.append(score[-self.args.patch_len:].detach().cpu().numpy()) #(1, 96)
 
 
 
@@ -271,6 +271,9 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
         
         if not os.path.exists(data_path):
             os.makedirs(data_path)
+        
+        # border1 = border1 - 768
+        # border2 = border2 - 768
         visual_mse(input[border1 - border_start-300:border2 - border_start+300], output[border1 - border_start-300:border2 - border_start+300], 
                    score_list[border1 - border_start-300:border2 - border_start+300], test_labels[border1 - border_start-300:border2 - border_start+300],file_path)
         if border1 - border_start - 1200 < 0:

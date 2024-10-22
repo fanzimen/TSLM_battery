@@ -20,9 +20,8 @@ dataset_dir="./dataset/UCR_Anomaly_FullData"
 # data="trend-220_UCR_Anomaly_STAFFIIIDatabase_43217_250720_251370.txt"
 # data="mos-001_UCR_Anomaly_DISTORTED1sddb40_35000_52000_52620.txt"
 # data="mav-001_UCR_Anomaly_DISTORTED1sddb40_35000_52000_52620.txt"
-# data="004_UCR_Anomaly_DISTORTEDBIDMC1_2500_5400_5600.txt"
-data="fte-011_UCR_Anomaly_DISTORTEDECG1_10000_11800_12100.txt"
-# patch_len=80
+data="004_UCR_Anomaly_DISTORTEDBIDMC1_2500_5400_5600.txt"
+# data="fte-011_UCR_Anomaly_DISTORTEDECG1_10000_11800_12100.txt"
 python -u run.py \
   --task_name anomaly_detection_mse \
   --is_training 0 \
