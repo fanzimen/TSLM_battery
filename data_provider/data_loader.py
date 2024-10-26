@@ -490,3 +490,49 @@ class UCRAnomalyloader_mse(Dataset):
         else:
             index = index * self.stride
             return self.data[index:index + self.seq_len, :]
+
+
+class Batteryloader(Dataset):
+    def __init__(self, root_path, data_path, seq_len, patch_len, flag="train", mode='original'):
+        self.root_path = root_path
+        self.data_path = data_path
+        self.seq_len = seq_len
+        self.input_len = seq_len - patch_len
+        self.patch_len = patch_len
+        self.flag = flag
+        self.stride = 1
+        self.pred_len = 100
+        self.dataset_file_path = os.path.join(self.root_path, self.data_path)
+        data_list = []
+        assert self.dataset_file_path.endswith('.txt')
+        try:
+            with open(self.dataset_file_path, "r", encoding='utf-8') as f:
+                for line in f.readlines():
+                    line = line.strip('\n').split(',')
+                    data_line = np.stack([float(i) for i in line])
+                    data_list.append(data_line)
+            self.data = np.stack(data_list, 0)
+        except ValueError:
+            with open(self.dataset_file_path, "r", encoding='utf-8') as f:
+                for line in f.readlines():
+                    line = line.strip('\n').split(',')
+                    data_line = np.stack([float(i) for i in line[0].split()])
+            self.data = data_line
+            self.data = np.expand_dims(self.data, axis=1)
+
+
+
+        self.scaler = StandardScaler()
+        self.scaler.fit(self.data)  #使用 self.border 之前的数据（通常是训练数据）来拟合 scaler
+        self.data = self.scaler.transform(self.data) #使用拟合好的标准化器 scaler 对整个数据集进行标准化处理
+
+
+    def __len__(self):
+        return (len(self.data) - self.seq_len) // self.stride + 1
+
+    def __getitem__(self, index):
+        start = index * self.stride
+        end = start + self.seq_len
+        x = self.data[start:end]
+        y = self.data[end:end + self.pred_len]
+        return x, y

@@ -42,7 +42,7 @@ def data_provider(args, flag):
                 label_len=args.label_len,
                 pred_len=args.output_len if flag == 'test' else args.pred_len,
                 data_type=args.data,
-                scale=True,
+                scale=False,
                 timeenc=timeenc,
                 freq=args.freq,
                 stride=args.stride,

@@ -215,8 +215,8 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
                 # reconstruct the input sequence and record the loss as a sorted list
                 if self.args.use_ims:
                     outputs = self.model(batch_x[:, :-self.args.patch_len, :], None, None, None) #[1, 672, 1] -> [1, 672, 1]
-                    batch_x = batch_x[:, self.args.patch_len:-self.args.patch_len, :] #[1, 576, 1]
-                    outputs = outputs[:, :-self.args.patch_len, :] #[1, 576, 1]
+                    # batch_x = batch_x[:, self.args.patch_len:-self.args.patch_len, :] #[1, 576, 1]
+                    # outputs = outputs[:, :-self.args.patch_len, :] #[1, 576, 1]
                 else: 
                     outputs = self.model(batch_x, None, None, None)
 
@@ -235,7 +235,7 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
                 input_list.append(batch_x[0, -self.args.patch_len:, -1].detach().cpu().numpy())
                 output_list.append(outputs[0, -self.args.patch_len:, -1].detach().cpu().numpy())
                 test_labels.append(batch_y[0,-self.args.patch_len:].reshape(-1).detach().cpu().numpy())
-                score = self.anomaly_criterion(batch_x, outputs).reshape(-1) 
+                score = self.anomaly_criterion(batch_x[:,-self.args.patch_len:,-1], outputs[:,-self.args.patch_len:,-1]).reshape(-1) 
                 score_list.append(score[-self.args.patch_len:].detach().cpu().numpy()) #(1, 96)
 
 
@@ -272,8 +272,8 @@ class Exp_Anomaly_Detection_Mse(Exp_Basic):
         if not os.path.exists(data_path):
             os.makedirs(data_path)
         
-        # border1 = border1 - 768
-        # border2 = border2 - 768
+        border1 = border1 - 672
+        border2 = border2 - 672
         visual_mse(input[border1 - border_start-300:border2 - border_start+300], output[border1 - border_start-300:border2 - border_start+300], 
                    score_list[border1 - border_start-300:border2 - border_start+300], test_labels[border1 - border_start-300:border2 - border_start+300],file_path)
         if border1 - border_start - 1200 < 0:

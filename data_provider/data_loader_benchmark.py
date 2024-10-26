@@ -60,8 +60,8 @@ class CIDatasetBenchmark(Dataset):
 
         if self.data_type == 'custom':
             data_len = len(df_raw)
-            num_train = int(data_len * 0.7)
-            num_test = int(data_len * 0.2)
+            num_train = int(data_len * 0.2)
+            num_test = int(data_len * 0.7)
             num_vali = data_len - num_train - num_test
             border1s = [0, num_train - self.input_len, data_len - num_test - self.input_len]
             border2s = [num_train, num_train + num_vali, data_len]

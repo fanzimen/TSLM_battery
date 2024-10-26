@@ -343,3 +343,75 @@ mse:0.35859358310699463, mae:0.38926148414611816
 forecast_etth1_sr_1_Timer_ETTh1_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-09-06_10-50-40  
 mse:0.35833877325057983, mae:0.38903748989105225
 
+forecast_weather_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_16-58-30  
+mse:0.15026764571666718, mae:0.28913021087646484
+
+forecast_weather_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_16-58-30  
+mse:0.150752454996109, mae:0.289374977350235
+
+forecast_weather_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_16-58-30  
+mse:0.14917439222335815, mae:0.28829312324523926
+
+forecast_weather_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_16-58-30  
+mse:0.1496552675962448, mae:0.2886788845062256
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-11-06  
+mse:0.11070140451192856, mae:0.25779783725738525
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-11-06  
+mse:0.11137130111455917, mae:0.25845733284950256
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-11-06  
+mse:0.11219924688339233, mae:0.2592898905277252
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-11-06  
+mse:0.11033430695533752, mae:0.2579110562801361
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-16-43  
+mse:0.1439693719148636, mae:0.29618528485298157
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-16-43  
+mse:0.1446976512670517, mae:0.2968078851699829
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-16-43  
+mse:0.14313894510269165, mae:0.29518944025039673
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_17-16-43  
+mse:0.14299222826957703, mae:0.29530930519104004
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_20-55-16  
+mse:0.1446976512670517, mae:0.2968078851699829
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_20-55-16  
+mse:0.14313894510269165, mae:0.29518944025039673
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_20-55-16  
+mse:0.1439693719148636, mae:0.29618528485298157
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_20-55-16  
+mse:0.14299222826957703, mae:0.29530930519104004
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-03-46  
+mse:0.000984627171419561, mae:0.02418644167482853
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-03-46  
+mse:0.0009822178399190307, mae:0.024181310087442398
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-03-46  
+mse:0.0009892211528494954, mae:0.024261746555566788
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-03-46  
+mse:0.0009810926858335733, mae:0.02414967492222786
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-14-50  
+mse:0.005207081325352192, mae:0.051531389355659485
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-14-50  
+mse:0.00520044332370162, mae:0.05149288848042488
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-14-50  
+mse:0.005194404162466526, mae:0.051460783928632736
+
+forecast_battery_sr_1_Timer_custom_ftM_sl672_ll576_pl96_pl96_dm1024_nh8_el8_dl1_df2048_fc3_ebtimeF_dtTrue_Exp24-10-25_21-14-50  
+mse:0.0052144709043204784, mae:0.05157579109072685
+

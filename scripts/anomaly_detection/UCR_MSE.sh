@@ -16,11 +16,11 @@ dataset_dir="./dataset/UCR_Anomaly_FullData"
 # for file_path in "$dataset_dir"/*
 # do
 # data=$(basename "$file_path")
-# data="trend-054_UCR_Anomaly_DISTORTEDWalkingAceleration5_2700_5920_5979.txt"
-# data="trend-220_UCR_Anomaly_STAFFIIIDatabase_43217_250720_251370.txt"
+data="trend-054_UCR_Anomaly_DISTORTEDWalkingAceleration5_2700_5920_5979.txt"
+# data="220_UCR_Anomaly_STAFFIIIDatabase_43217_250720_251370.txt"
 # data="mos-001_UCR_Anomaly_DISTORTED1sddb40_35000_52000_52620.txt"
 # data="mav-001_UCR_Anomaly_DISTORTED1sddb40_35000_52000_52620.txt"
-data="004_UCR_Anomaly_DISTORTEDBIDMC1_2500_5400_5600.txt"
+# data="004_UCR_Anomaly_DISTORTEDBIDMC1_2500_5400_5600.txt"
 # data="fte-011_UCR_Anomaly_DISTORTEDECG1_10000_11800_12100.txt"
 python -u run.py \
   --task_name anomaly_detection_mse \
@@ -42,5 +42,6 @@ python -u run.py \
   --batch_size 128 \
   --subset_rand_ratio $subset_rand_ratio \
   --train_epochs 10 \
+  --is_finetuning 0 \
   --use_ims
 # done
